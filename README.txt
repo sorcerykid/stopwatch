@@ -1,4 +1,4 @@
-Stopwatch Mod v1.0
+Stopwatch Mod v1.1
 By Leslie Krause
 
 Repository
@@ -10,6 +10,17 @@ Browse source code:
 Download archive:
   https://bitbucket.org/sorcerykid/stopwatch/get/master.zip
   https://bitbucket.org/sorcerykid/stopwatch/get/master.tar.gz
+
+Revision History
+----------------------
+
+Version 1.0b (22-Aug-2018)
+  - initial beta version
+
+Version 1.1b (24-Aug-2018)
+  - included mod.conf and description.txt files
+  - included working code examples for developers
+  - implemented stack for non-linear testing of code
 
 Installation
 ----------------------

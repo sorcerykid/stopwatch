@@ -1,8 +1,8 @@
 --------------------------------------------------------
--- Minetest :: Stopwatch Mod v1.0 (stopwatch)
+-- Minetest :: Stopwatch Mod v1.1 (stopwatch)
 --
 -- See README.txt for licensing and release notes.
--- Copyright (c) 2016-2018, Leslie Ellen Krause
+-- Copyright (c) 2018, Leslie E. Krause
 --------------------------------------------------------
 
 function Stopwatch( scale )
@@ -12,7 +12,7 @@ function Stopwatch( scale )
 	local factors = { us = 1, ms = 1000, s = 1000000 }
 	local origin = getinfo( 2 ).source
 	local trials = { }
-	local id
+	local series = { }
 
 	if not scale then
 		scale = "ms"
@@ -28,14 +28,12 @@ function Stopwatch( scale )
 			v = { count = 0, delta_t = 0 }
 			trials[ id ] = v
 		end
+		table.insert( series, id )
 		v.start = clock( )
 	end
-	local function S_( is_show, desc )
-		if not desc and not id then
-			local i = getinfo( 2, "lf" )
-			id = tostring( i.func ) .. ", line " .. i.currentline
-		end
-		local v = trials[ desc or id ]
+	local function S_( is_show )
+		local id = table.remove( series )
+		local v = trials[ id ]
 		local delta = clock( ) - v.start
 		if is_show then
 			print( sprintf( "** trial count = %9.3f %s @%s", delta / factors[ scale ], scale, id ) )
