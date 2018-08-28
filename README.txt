@@ -1,4 +1,4 @@
-Stopwatch Mod v1.1
+Stopwatch Mod v1.2
 By Leslie Krause
 
 Repository
@@ -21,6 +21,10 @@ Version 1.1b (24-Aug-2018)
   - included mod.conf and description.txt files
   - included working code examples for developers
   - implemented stack for non-linear testing of code
+
+Version 1.2b (28-Aug-2018)
+  - major rewrite to improve accuracy and efficiency
+  - updated code examples with latest feature-set
 
 Installation
 ----------------------
